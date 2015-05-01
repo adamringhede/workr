@@ -1,4 +1,9 @@
-module.exports =  {
-  Manager: require('./lib/Manager'),
-  Worker: require('./lib/Worker')
+workr = {
+  Handle: require('./lib/Handle'),
+  Worker: require('./lib/Worker'),
+  spawn: function (file) {
+    return new workr.Handle(file);
+  }
 }
+
+module.exports = workr;

@@ -1,12 +1,10 @@
 {
-  "name": "node-workers",
+  "name": "workr",
   "version": "1.0.0",
-  "description": "Manager to worker process communication the way it should be",
+  "description": "Manger to worker process communication the way it should be",
   "main": "index.js",
   "scripts": {
-    "build": "tsc ./lib/*.ts ./test/*.ts ./test/assets/test.ts --module commonjs  --target es5 --removeComments",
-    "test": "mocha",
-    "postinstall": "tsd install mocha eventemitter2 node; npm run build"
+    "test": "mocha"
   },
   "author": "Adam Ringhede",
   "license": "ISC",
