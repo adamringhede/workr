@@ -10,3 +10,7 @@ w.define('square', function (x, done) {
 w.define('add', function (a, b, done) {
     done(a + b);
 });
+
+w.define('getId', function (done) {
+  done(w.id);
+});
