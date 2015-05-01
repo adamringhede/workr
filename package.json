@@ -1,0 +1,21 @@
+{
+  "name": "node-workers",
+  "version": "1.0.0",
+  "description": "Manager to worker process communication the way it should be",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc ./lib/*.ts ./test/*.ts ./test/assets/test.ts --module commonjs  --target es5 --removeComments",
+    "test": "mocha",
+    "postinstall": "tsd install mocha eventemitter2 node; npm run build"
+  },
+  "author": "Adam Ringhede",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.2.4",
+    "typescript-require": "^0.2.8"
+  },
+  "dependencies": {
+    "eventemitter2": "^0.4.14",
+    "puid": "^1.0.5"
+  }
+}
