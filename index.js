@@ -1,8 +1,8 @@
 workr = {
   Handle: require('./lib/Handle'),
   Worker: require('./lib/Worker'),
-  spawn: function (file) {
-    return new workr.Handle(file);
+  spawn: function (filePath, payload) {
+    return new workr.Handle(filePath, payload);
   }
 }
 

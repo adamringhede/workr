@@ -18,3 +18,7 @@ w.define('getId', function (done) {
 w.define('returnMultipleResponses', function (done) {
   done('a','b')
 })
+
+w.define('getPayload', function (done) {
+  done(w.payload);
+})

@@ -20,4 +20,15 @@ describe('Worker', function () {
     assert.ok(workerHandle instanceof Handle);
     done()
   });
+  it('can be sent payload data on instantiation', function (done) {
+    var payload = {
+      foo: 23
+    };
+    var worker = workr.spawn(workerFilePath, payload);
+    worker.call('getPayload').response(function (result) {
+      assert.deepEqual(payload, result);
+      assert.deepEqual(worker.payload, result);
+      done()
+    });
+  })
 })
