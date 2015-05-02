@@ -33,11 +33,10 @@ describe('Methods', function () {
     });
   });
   it('throws an error if method is not defined', function (done) {
-    try {
-      worker.call('asd');
-    } catch (e) {
-      done();
-    }
-
+      worker.once('error', function (error) {
+        assert.equal(1, error.code);
+        done()
+      });
+      worker.call('a method that is not defined');
   });
 });

@@ -15,6 +15,6 @@ w.define('getId', function (done) {
   done(w.id);
 });
 
-w.define('returnMultipleResonses', function (done) {
+w.define('returnMultipleResponses', function (done) {
   done('a','b')
 })
