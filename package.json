@@ -1,6 +1,6 @@
 {
   "name": "workr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Manger to worker process communication the way it should be",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "Adam Ringhede",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^2.2.4",
+    "mocha": "^2.2.4"
   },
   "dependencies": {
     "eventemitter2": "^0.4.14",
