@@ -12,7 +12,7 @@ w.define('add', function (a, b, done) {
 });
 
 w.define('getId', function (done) {
-  done(w.id);
+  done(this.id);
 });
 
 w.define('returnMultipleResponses', function (done) {
@@ -20,5 +20,5 @@ w.define('returnMultipleResponses', function (done) {
 })
 
 w.define('getPayload', function (done) {
-  done(w.payload);
+  done(this.payload);
 })
