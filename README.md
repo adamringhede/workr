@@ -15,27 +15,33 @@ EventEmitter2 so that you can use namespaces and wildcards when registering your
 See tests for additional examples of how to implement the managing process and the file ./test/assets/test_worker.js for methods definitions and event propagation.
 
 #### Worker
-The method done is used to return a response to the managing process when finished.
+The method `done(...returnValues)` is used to return zero or more responses to the managing process when finished.
 ```JS
-var Worker = require("../../lib/Worker");
-var w = new Worker();
+var Worker = require("workr").Worker;
+var worker = new Worker();
 
-w.emit('test', 'Hello world!');
+worker.emit('test', 'Hello world!');
 
-w.define('square', function (x, done) {
+worker.define('square', function (x, done) {
   done(x * x);
 });
 
-w.define('add', function (a, b, done) {
+worker.define('add', function (a, b, done) {
   done(a + b);
 });
 ```
 
-### Worker handle
-A worker handle is returned when creating a new worker in the managing process.
+#### Worker handle
+A worker handle is returned when creating a new worker in the managing process. It can be used to call methods in the worker and listen for events.
 
 ```JS
+var Handle = require("workr").Handle
+
 var worker = new Handle(workerFilePath);
+
+worker.on('test', function (data) {
+  assert.equal('Hello world!', data);
+});
 
 worker.call('square', 5).response(function (result) {
   assert.equal(25, result);

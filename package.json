@@ -1,12 +1,16 @@
 {
   "name": "workr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Manger to worker process communication the way it should be",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "author": "Adam Ringhede",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamringhede/workr.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "mocha": "^2.2.4"
